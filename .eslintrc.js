@@ -7,12 +7,6 @@ module.exports = {
   "import/no-anonymous-default-export": "off",
  },
  env: {
-  es2022: true,
-  node: true,
-  browser: true,
- },
- parserOptions: {
-  ecmaVersion: 2022,
-  sourceType: "module",
+  es6: true,
  },
 };

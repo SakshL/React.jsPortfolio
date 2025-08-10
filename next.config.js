@@ -5,9 +5,6 @@ const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
  pageExtensions: ["jsx", "js"],
- experimental: {
-  optimizePackageImports: ['@heroicons/react', '@headlessui/react'],
- },
  env: {
   VERSION: process.env.npm_package_version,
  },
