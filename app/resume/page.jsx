@@ -8,12 +8,12 @@ export default function Resume() {
  return (
   <div className="mx-auto mb-16 flex max-w-7xl flex-col items-start justify-center">
    {/* Hero Section */}
-   <div className="relative mb-12 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#6310ff] via-[#1491ff] to-[#64acff] p-8 text-white">
+   <div className="relative mb-12 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-900 via-gray-900 to-slate-900 p-8 text-white">
     <div className="absolute inset-0 opacity-10">
      <div className="h-full w-full bg-repeat" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
     </div>
     <div className="relative z-10">
-     <h1 className="mb-4 bg-gradient-to-r from-white via-[#a2facf] to-[#64acff] bg-clip-text text-5xl font-bold text-transparent">SAKSHYAM BARAL</h1>
+     <h1 className="mb-4 bg-gradient-to-r from-white via-slate-200 to-gray-300 bg-clip-text text-5xl font-bold text-transparent">SAKSHYAM BARAL</h1>
      <p className="mb-4 text-2xl font-light text-white/90">Creative Tech Enthusiast & Full-Stack Developer</p>
      <p className="mb-6 text-lg text-white/80">4 years of experience crafting digital experiences</p>{" "}
      <div className="mb-6 flex flex-wrap gap-4">
@@ -44,7 +44,7 @@ export default function Resume() {
        </svg>
        <span className="text-sm font-medium">GitHub</span>
       </Link>
-      <Link href="#" target="_blank" className="group flex items-center gap-2 rounded-lg bg-[#1491ff]/50 px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 hover:bg-[#1491ff]/70">
+      <Link href="https://www.linkedin.com/in/sakshyam-baral-765b27363/" target="_blank" className="group flex items-center gap-2 rounded-lg bg-[#1491ff]/50 px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 hover:bg-[#1491ff]/70">
        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
         <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"></path>
        </svg>
@@ -91,6 +91,13 @@ export default function Resume() {
 
     <div className="grid gap-6 md:grid-cols-2">
      {[
+      {
+       title: "Currency Hub – Multi-Currency Converter & University Budget Planner",
+       period: "Jul 23 — Aug 10, 2025",
+       desc: "Developed with Flask & JavaScript – Real-time currency conversion with live rates, plus university cost comparison and budgeting tools.",
+       gradient: "from-blue-500 to-cyan-500",
+       icon: "💱",
+      },
       {
        title: "Portfolio Website",
        period: "Jan 2021 — Present",
@@ -381,7 +388,7 @@ export default function Resume() {
 
    {/* Download CTA */}
    <div className="mt-12 w-full text-center">
-    <div className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-8 text-white">
+    <div className="rounded-3xl bg-gradient-to-r from-zinc-800 via-gray-800 to-slate-800 p-8 text-white">
      <h3 className="mb-4 text-2xl font-bold">Ready to Connect?</h3>
      <p className="mb-6 text-lg opacity-90">Download my resume or get in touch to discuss opportunities</p>
      <div className="flex flex-wrap justify-center gap-4">
