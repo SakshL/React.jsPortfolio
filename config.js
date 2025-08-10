@@ -53,7 +53,7 @@ export const nav = {
  right: [
   {
    href: "/photography/",
-   title: "Photography",
+   title: "Resume",
   },
   {
    href: meta.accounts.discord.invite,
@@ -164,7 +164,7 @@ export const footer = {
      href: "/blog",
     },
     {
-     title: "Photography",
+     title: "Resume",
      href: "/photography",
     },
    ],
