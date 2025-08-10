@@ -6,16 +6,17 @@ export const metadata = {
 
 export default function Resume() {
  return (
- <div className="mx-auto mb-16 flex max-w-7xl flex-col items-start justify-center">
-  {/* Hero Section */}
-  <div className="relative mb-12 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#6310ff] via-[#1491ff] to-[#64acff] p-8 text-white">
-   <div className="absolute inset-0 opacity-10">
-    <div className="h-full w-full bg-repeat" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-   </div>
-   <div className="relative z-10">
-    <h1 className="mb-4 bg-gradient-to-r from-white via-[#a2facf] to-[#64acff] bg-clip-text text-5xl font-bold text-transparent">SAKSHYAM BARAL</h1>
-    <p className="mb-4 text-2xl font-light text-white/90">Creative Tech Enthusiast & Full-Stack Developer</p>
-    <p className="mb-6 text-lg text-white/80">4 years of experience crafting digital experiences</p>     <div className="mb-6 flex flex-wrap gap-4">
+  <div className="mx-auto mb-16 flex max-w-7xl flex-col items-start justify-center">
+   {/* Hero Section */}
+   <div className="relative mb-12 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#6310ff] via-[#1491ff] to-[#64acff] p-8 text-white">
+    <div className="absolute inset-0 opacity-10">
+     <div className="h-full w-full bg-repeat" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
+    </div>
+    <div className="relative z-10">
+     <h1 className="mb-4 bg-gradient-to-r from-white via-[#a2facf] to-[#64acff] bg-clip-text text-5xl font-bold text-transparent">SAKSHYAM BARAL</h1>
+     <p className="mb-4 text-2xl font-light text-white/90">Creative Tech Enthusiast & Full-Stack Developer</p>
+     <p className="mb-6 text-lg text-white/80">4 years of experience crafting digital experiences</p>{" "}
+     <div className="mb-6 flex flex-wrap gap-4">
       <div className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
@@ -36,7 +37,6 @@ export default function Resume() {
        <span className="text-sm">9761611651</span>
       </div>
      </div>
-
      <div className="flex flex-wrap gap-3">
       <Link href="https://github.com/SakshL" target="_blank" className="group flex items-center gap-2 rounded-lg bg-zinc-800/50 px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 hover:bg-zinc-800/70 dark:bg-white/10 dark:hover:bg-white/20">
        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -62,7 +62,7 @@ export default function Resume() {
 
    {/* Profile Section */}
    <div className="mb-8 w-full">
-    <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl dark:bg-[#161617] dark:border dark:border-neutral-800">
+    <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl dark:border dark:border-neutral-800 dark:bg-[#161617]">
      <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#6310ff] to-[#1491ff] opacity-5 transition-all group-hover:scale-125"></div>
      <h2 className="mb-4 flex items-center text-2xl font-bold text-zinc-800 dark:text-white">
       <div className="mr-3 rounded-full bg-gradient-to-r from-[#6310ff] to-[#1491ff] p-2">
@@ -127,7 +127,7 @@ export default function Resume() {
        icon: "📖",
       },
      ].map((project, index) => (
-      <div key={index} className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl dark:bg-[#161617] dark:border dark:border-neutral-800">
+      <div key={index} className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl dark:border dark:border-neutral-800 dark:bg-[#161617]">
        <div className="absolute inset-0 bg-gradient-to-br from-[#6310ff] to-[#1491ff] opacity-0 transition-opacity group-hover:opacity-5"></div>
        <div className="relative">
         <div className="mb-4 flex items-start justify-between">
@@ -215,7 +215,7 @@ export default function Resume() {
     {/* Education & Skills */}
     <div className="space-y-8">
      {/* Education */}
-     <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-[#161617] dark:border dark:border-neutral-800">
+     <div className="rounded-2xl bg-white p-6 shadow-lg dark:border dark:border-neutral-800 dark:bg-[#161617]">
       <h3 className="mb-4 flex items-center text-xl font-bold text-zinc-800 dark:text-white">
        <div className="mr-3 rounded-full bg-gradient-to-r from-[#6310ff] to-[#1491ff] p-2">
         <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,7 +225,7 @@ export default function Resume() {
        </div>
        EDUCATION
       </h3>
-      <div className="rounded-lg bg-gradient-to-br from-[#6310ff]/5 to-[#1491ff]/5 p-4 border border-[#6310ff]/10 dark:from-[#1491ff]/10 dark:to-[#64acff]/10">
+      <div className="rounded-lg border border-[#6310ff]/10 bg-gradient-to-br from-[#6310ff]/5 to-[#1491ff]/5 p-4 dark:from-[#1491ff]/10 dark:to-[#64acff]/10">
        <h4 className="font-semibold text-zinc-800 dark:text-white">Little Flowers' English School</h4>
        <p className="text-sm text-zinc-500 dark:text-slate-400">Aug 2023 — Jul 2025</p>
        <p className="mt-1 text-sm text-zinc-600 dark:text-slate-400">
@@ -237,7 +237,7 @@ export default function Resume() {
      </div>
 
      {/* Skills */}
-     <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-[#161617] dark:border dark:border-neutral-800">
+     <div className="rounded-2xl bg-white p-6 shadow-lg dark:border dark:border-neutral-800 dark:bg-[#161617]">
       <h3 className="mb-4 flex items-center text-xl font-bold text-zinc-800 dark:text-white">
        <div className="mr-3 rounded-full bg-gradient-to-r from-[#6310ff] to-[#1491ff] p-2">
         <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +297,7 @@ export default function Resume() {
        logo: "🏦",
       },
      ].map((internship, index) => (
-      <div key={index} className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl dark:bg-[#161617] dark:border dark:border-neutral-800">
+      <div key={index} className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl dark:border dark:border-neutral-800 dark:bg-[#161617]">
        <div className="absolute inset-0 bg-gradient-to-br from-[#6310ff] to-[#1491ff] opacity-0 transition-opacity group-hover:opacity-5"></div>
        <div className="relative">
         <div className="mb-4 flex items-start gap-4">
@@ -352,7 +352,7 @@ export default function Resume() {
     </div>
 
     {/* Hobbies */}
-    <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-[#161617] dark:border dark:border-neutral-800">
+    <div className="rounded-2xl bg-white p-6 shadow-lg dark:border dark:border-neutral-800 dark:bg-[#161617]">
      <h3 className="mb-4 flex items-center text-xl font-bold text-zinc-800 dark:text-white">
       <div className="mr-3 rounded-full bg-gradient-to-r from-[#6310ff] to-[#1491ff] p-2">
        <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
