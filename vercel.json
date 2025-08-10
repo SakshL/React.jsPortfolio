@@ -1,0 +1,12 @@
+{
+ "framework": "nextjs",
+ "github": {
+  "silent": true
+ },
+ "cleanUrls": true,
+ "functions": {
+  "app/api/**/*.js": {
+   "runtime": "nodejs22.x"
+  }
+ }
+}
