@@ -52,7 +52,7 @@ export const nav = {
  ],
  right: [
   {
-   href: "/photography/",
+   href: "/resume/",
    title: "Resume",
   },
   {
@@ -165,7 +165,7 @@ export const footer = {
     },
     {
      title: "Resume",
-     href: "/photography",
+     href: "/resume",
     },
    ],
   },
