@@ -66,7 +66,7 @@ export const nav = {
 export const contact = {
  links: [
   {
-   href: "mailto:sakshyamthew@gmail.com",
+   href: "mailto:sakshyambaral97@gmail.com",
    title: "Email",
    icon: (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 duration-200 motion-reduce:transition-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

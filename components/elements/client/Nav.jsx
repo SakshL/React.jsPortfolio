@@ -2,6 +2,7 @@
 
 import { nav, meta } from "/config";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import MobileNav from "components/elements/client/MobileNav";
 import Settings from "components/elements/client/Settings";
 import Popover from "components/elements/client/NavPopover";
@@ -10,11 +11,21 @@ import clsx from "clsx";
 
 function NavItem({ href, text, target }) {
  const path = usePathname();
+ const [isActive, setIsActive] = useState(false);
+ const [isMounted, setIsMounted] = useState(false);
+
+ useEffect(() => {
+  setIsMounted(true);
+  if (path && href) {
+   const pathSegment = path.split("/")[1]?.trim() || "";
+   const hrefSegment = href.split("/")[1]?.trim() || "";
+   setIsActive(pathSegment === hrefSegment);
+  }
+ }, [path, href]);
+
  if (!href) return null;
- if (!path) return null;
- let isActive = path.split("/")[1].trim() === href.split("/")[1].trim();
+
  if (href.startsWith("https://") || href.startsWith("http://")) {
-  isActive = false;
   target = "_blank";
  }
  return (
@@ -24,8 +35,8 @@ function NavItem({ href, text, target }) {
    target={target}
    className={clsx(
     {
-     "active text-gray-800 dark:text-gray-200": isActive,
-     "text-gray-600 dark:text-gray-400": !isActive,
+     "active text-gray-800 dark:text-gray-200": isMounted && isActive,
+     "text-gray-600 dark:text-gray-400": !isMounted || !isActive,
     },
     "nav-border relative hidden rounded-lg p-1 transition-all duration-200 before:w-[calc(100%_-_1.5em)] after:w-[calc(100%_-_1.5em)] hover:bg-black/10 hover:text-gray-800 motion-reduce:transition-none dark:hover:bg-white/10 dark:hover:text-gray-200 sm:px-3 sm:py-2 md:inline-block"
    )}
