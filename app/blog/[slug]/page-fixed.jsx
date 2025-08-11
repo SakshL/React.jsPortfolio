@@ -19,7 +19,7 @@ export async function generateStaticParams() {
   slug: post.slug,
  }));
 
- // Get dynamic params from API
+ // Get dynamic params from public API
  let dynamicParams = [];
  try {
   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
@@ -34,41 +34,6 @@ export async function generateStaticParams() {
   console.error("Failed to fetch dynamic blog params:", error);
  }
 
- return [...staticParams, ...dynamicParams];vatar.png";
-import { allBlogs } from "contentlayer/generated";
-import { parseISO } from "/lib/utils";
-import { meta } from "/config";
-import { TocItem } from "components/blog/Toc";
-import { MDXComponent } from "components/blog/Components";
-import { getBlogPosts } from "../../../lib/admin-vercel";
-import Image from "next/image";
-import Link from "next/link";
-import "styles/blog.css";
-import { notFound } from "next/navigation";
-
-export const runtime = "edge";
-export const dynamic = "force-dynamic"; // Force dynamic rendering
-export const revalidate = 0; // Disable caching
-
-export async function generateStaticParams() {
- // Get static params from contentlayer
- const staticParams = allBlogs.map((post) => ({
-  slug: post.slug,
- }));
-
- // Get dynamic params from API
- let dynamicParams = [];
- try {
-  const apiPosts = await getBlogPosts();
-  dynamicParams = apiPosts
-   .filter((post) => post.status === "published")
-   .map((post) => ({
-    slug: post.slug,
-   }));
- } catch (error) {
-  console.error("Failed to fetch dynamic blog params:", error);
- }
-
  return [...staticParams, ...dynamicParams];
 }
 
@@ -79,15 +44,19 @@ export async function generateMetadata({ params }) {
  // If not found in static, check dynamic posts
  if (!post) {
   try {
-   const apiPosts = await getBlogPosts();
-   const dynamicPost = apiPosts.find((p) => p.slug === params?.slug && p.status === "published");
-   if (dynamicPost) {
-    post = {
-     title: dynamicPost.title,
-     publishedAt: dynamicPost.publishedAt || dynamicPost.createdAt,
-     summary: dynamicPost.summary || dynamicPost.content?.substring(0, 150),
-     slug: dynamicPost.slug,
-    };
+   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+   const response = await fetch(`${baseUrl}/api/blog`, { cache: 'no-store' });
+   if (response.ok) {
+    const apiPosts = await response.json();
+    const dynamicPost = apiPosts.find((p) => p.slug === params?.slug);
+    if (dynamicPost) {
+     post = {
+      title: dynamicPost.title,
+      publishedAt: dynamicPost.publishedAt || dynamicPost.createdAt,
+      summary: dynamicPost.summary || dynamicPost.content?.substring(0, 150),
+      slug: dynamicPost.slug,
+     };
+    }
    }
   } catch (error) {
    console.error("Failed to fetch dynamic blog metadata:", error);
@@ -126,11 +95,15 @@ export default async function Post({ params }) {
  // If not found in static, check dynamic posts
  if (!post) {
   try {
-   const apiPosts = await getBlogPosts();
-   const dynamicPost = apiPosts.find((p) => p.slug === params?.slug && p.status === "published");
-   if (dynamicPost) {
-    post = dynamicPost;
-    isDynamic = true;
+   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+   const response = await fetch(`${baseUrl}/api/blog`, { cache: 'no-store' });
+   if (response.ok) {
+    const apiPosts = await response.json();
+    const dynamicPost = apiPosts.find((p) => p.slug === params?.slug);
+    if (dynamicPost) {
+     post = dynamicPost;
+     isDynamic = true;
+    }
    }
   } catch (error) {
    console.error("Failed to fetch dynamic blog post:", error);
@@ -170,7 +143,7 @@ export default async function Post({ params }) {
        </p>
       </div>
      </header>
-
+     
      {/* Render MDX for static posts or plain content for dynamic posts */}
      {isDynamic ? (
       <div className="prose prose-lg max-w-none dark:prose-dark">
@@ -180,7 +153,7 @@ export default async function Post({ params }) {
       <MDXComponent code={post.body.code} />
      )}
     </div>
-
+    
     {/* Table of contents - only for static posts with headings */}
     {!isDynamic && post?.headings && (
      <div className="sticky top-24 !col-start-3 ml-3 mt-8 hidden max-w-[14rem] flex-col space-y-2 self-start text-base xl:flex">
@@ -191,7 +164,7 @@ export default async function Post({ params }) {
      </div>
     )}
    </div>
-
+   
    {/* Edit suggestion link - only for static posts */}
    {!isDynamic && (
     <div className="flex w-full justify-end py-4  text-gray-700 dark:text-gray-300">

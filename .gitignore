@@ -40,3 +40,4 @@ yarn-error.log*
 # Other files
 sitemap.xml
 feed.xml
+.vercel

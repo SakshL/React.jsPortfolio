@@ -3,6 +3,7 @@ import { RepoCard } from "components/elements/RepoCard";
 import { GetRepos } from "lib/graphql";
 
 export const runtime = "edge";
+export const revalidate = 3600; // Revalidate every hour
 
 export const metadata = {
  title: "Github Repositories",

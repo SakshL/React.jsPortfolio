@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
+import AnalyticsTracker from "components/AnalyticsTracker";
 import { Nav } from "components/elements/client/Nav";
 import { ProgressBar } from "components/elements/client/Progress";
 import { Theme } from "components/elements/client/Theme";
@@ -61,6 +62,7 @@ export default function RootLayout({ children, modal }) {
       <main className="mt-24 flex min-h-screen flex-col px-6 antialiased">
        <ProgressBar />
        <Analytics />
+       <AnalyticsTracker />
        {children}
        {modal}
       </main>

@@ -34,7 +34,7 @@ export default async function HomePage() {
        <h2 className="text-center text-[1.5rem] font-semibold opacity-80 md:text-left">{header.subtitle}</h2>
        <p className="mt-2 text-center  text-slate-600 dark:text-slate-400  md:w-3/4 md:text-left">{header.description}</p>
        <div className="mt-4 flex justify-center md:block">
-        <Link href="/#about" scroll={false} className="arrow link group relative mt-5 inline-block items-center justify-center p-2 pb-1 pl-0 pr-0  font-semibold">
+        <Link href="#about" className="arrow link group relative mt-5 inline-block items-center justify-center p-2 pb-1 pl-0 pr-0  font-semibold">
          <>
           More about me
           <svg className="arrowSymbol inline-block translate-x-[5px] duration-200 group-hover:translate-x-[10px] motion-reduce:transition-none" width="16" height="16" viewBox="0 0 16 16" fill="none">

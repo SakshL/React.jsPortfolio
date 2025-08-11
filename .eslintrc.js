@@ -5,6 +5,8 @@ module.exports = {
   "react/prop-types": "off",
   "@next/next/no-html-link-for-pages": "off",
   "import/no-anonymous-default-export": "off",
+  "no-alert": "off",
+  "complexity": "off",
  },
  env: {
   es6: true,

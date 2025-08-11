@@ -13,7 +13,6 @@ export async function GET(request, { params }) {
  const owner = params.owner;
 
  if (!repo || !typeof repo === "string" || !owner || !typeof owner === "string") {
-  console.log(repo, owner);
   return redirect("/opengraph-image");
  }
 
@@ -23,20 +22,7 @@ export async function GET(request, { params }) {
   return redirect("/opengraph-image");
  }
 
- if (og && og.og && og.domain === "repository-images.githubusercontent.com") {
-  const image = await fetch(og.og);
-  const buffer = await image.arrayBuffer();
-  const type = image.headers.get("Content-Type");
-
-  return new Response(buffer, {
-   headers: {
-    "Content-Type": type,
-    "Cache-Control": "public, max-age=31536000, immutable",
-    "X-Response-Time": `${Date.now() - start}ms`,
-   },
-  });
- }
-
+ // Always generate custom OG image instead of using GitHub's default
  const fontBold = await fetch(new URL("/public/fonts/bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
  const fontRegular = await fetch(new URL("/public/fonts/regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 
@@ -62,36 +48,13 @@ export async function GET(request, { params }) {
      style={{
       display: "flex",
       alignItems: "center",
-      gap: "20px",
+      justifyContent: "center",
+      flexDirection: "column",
+      textAlign: "center",
      }}
     >
-     <img
-      src={og.owner.avatar}
-      height="128px"
-      width="128px"
-      style={{
-       width: "128px",
-       height: "128px",
-       display: "flex",
-       borderRadius: "15%",
-      }}
-      alt="Avatar"
-     />
-
-     <div
-      style={{
-       display: "flex",
-       flexDirection: "column",
-       justifyContent: "center",
-      }}
-     >
-      <h1 style={{ color: "#fff", fontFamily: "PoppinsBold", fontSize: 32, margin: "0 0 15px 0" }}>
-       {owner}
-       <span style={{ color: "#c1c1c1", fontFamily: "PoppinsRegular" }}>/</span>
-       {repo}
-      </h1>
-      <p style={{ color: "#c1c1c1", fontFamily: "PoppinsRegular", fontSize: 24, maxWidth: "90%", margin: 0, padding: 0 }}>{og.description}</p>
-     </div>
+     <h1 style={{ color: "#fff", fontFamily: "PoppinsBold", fontSize: 48, margin: "0 0 20px 0" }}>{repo}</h1>
+     <p style={{ color: "#c1c1c1", fontFamily: "PoppinsRegular", fontSize: 24, maxWidth: "80%", margin: 0, padding: 0, textAlign: "center" }}>{og.description || "A project by " + owner}</p>
     </div>
     {og.languages && og.languages.length > 0 && (
      <div
@@ -126,6 +89,9 @@ export async function GET(request, { params }) {
    debug: false,
    headers: {
     "Server-Timing": `response;dur=${Date.now() - start}ms`,
+    "Cache-Control": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800",
+    "CDN-Cache-Control": "max-age=86400",
+    "Vercel-CDN-Cache-Control": "max-age=86400",
    },
    fonts: [
     {
