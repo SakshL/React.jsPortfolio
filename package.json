@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "next start",
-    "dev": "NODE_ENV=development next dev",
-    "dev:turbo": "NODE_ENV=development next dev --turbo --show-all",
+    "dev": "next dev",
+    "dev:turbo": "next dev --turbo --show-all",
     "build": "node scripts/build-banner.js && next build && node scripts/build-success.js",
     "deploy": "node scripts/deploy-banner.js && pnpm run build && pnpm run start && node scripts/deploy-success.js",
     "format": "prettier . --write --cache --ignore-unknown --plugin=prettier-plugin-tailwindcss",

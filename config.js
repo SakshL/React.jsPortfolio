@@ -10,7 +10,7 @@ export const meta = {
  accounts: {
   github: {
    username: "SakshL",
-   repo: "rickrolllmfao",
+   repo: "React.jsPortfolio",
   },
   twitter: {
    username: "@sakshyamky",
@@ -66,7 +66,7 @@ export const nav = {
 export const contact = {
  links: [
   {
-   href: "mailto:sakshyambaral97@gmail.com",
+   href: "mailto:contact@sakshyambaral.com.np",
    title: "Email",
    icon: (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 duration-200 motion-reduce:transition-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
