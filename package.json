@@ -1,14 +1,14 @@
 {
-  "name": "igorkowalczyk-portfolio",
+  "name": "sakshyam-portfolio",
   "description": "My portfolio built on Next.js",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "private": true,
   "scripts": {
     "start": "next start",
     "dev": "NODE_ENV=development next dev",
     "dev:turbo": "NODE_ENV=development next dev --turbo --show-all",
-    "build": "next build",
-    "deploy": "pnpm run build && pnpm run start",
+    "build": "node scripts/build-banner.js && next build && node scripts/build-success.js",
+    "deploy": "node scripts/deploy-banner.js && pnpm run build && pnpm run start && node scripts/deploy-success.js",
     "format": "prettier . --write --cache --ignore-unknown --plugin=prettier-plugin-tailwindcss",
     "format:check": "prettier . --check --cache --ignore-unknown",
     "analyze": "ANALYZE=true next build",
@@ -25,6 +25,7 @@
     "@tippyjs/react": "4.2.6",
     "@vercel/analytics": "1.0.2",
     "@vercel/og": "0.5.13",
+    "@vercel/speed-insights": "^1.2.0",
     "clsx": "2.0.0",
     "contentlayer": "0.3.4",
     "dotenv": "16.3.1",
@@ -78,13 +79,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igorkowalczyk/igorkowalczyk.github.io.git"
+    "url": "git+https://github.com/SakshL/React.jsPortfolio.git"
   },
-  "author": "Igor Kowalczyk",
+  "author": "Sakshyam Baral",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/igorkowalczyk/igorkowalczyk.github.io/issues"
+    "url": "https://github.com/SakshL/React.jsPortfolio/issues"
   },
-  "homepage": "https://igorkowalczyk.dev",
+  "homepage": "https://sakshyambaral.com.np",
   "packageManager": "pnpm@8.7.3"
 }

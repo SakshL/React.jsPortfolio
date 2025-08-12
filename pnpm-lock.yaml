@@ -23,6 +23,9 @@ dependencies:
   '@vercel/og':
     specifier: 0.5.13
     version: 0.5.13
+  '@vercel/speed-insights':
+    specifier: ^1.2.0
+    version: 1.2.0(next@13.4.19)(react@18.2.0)
   clsx:
     specifier: 2.0.0
     version: 2.0.0
@@ -1335,6 +1338,34 @@ packages:
       '@resvg/resvg-wasm': 2.4.1
       satori: 0.10.4
       yoga-wasm-web: 0.3.3
+    dev: false
+
+  /@vercel/speed-insights@1.2.0(next@13.4.19)(react@18.2.0):
+    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
+    requiresBuild: true
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      next: 13.4.19(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
     dev: false
 
   /@wits/next-themes@0.2.16(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):

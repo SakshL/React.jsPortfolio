@@ -12,54 +12,71 @@ export function Contact(props) {
 
  const [success, setSuccess] = useState("");
  const [error, setError] = useState("");
+ const [loading, setLoading] = useState(false);
 
  const handleSubmit = async (e) => {
   e.preventDefault();
   setSuccess("");
   setError("");
+  setLoading(true);
 
   const { email, name, message } = formData;
 
   if (!email) {
    setSuccess("");
+   setLoading(false);
    return setError("Please enter your email address!");
   } else if (!email.includes("@") || !email.includes(".")) {
    setSuccess("");
+   setLoading(false);
    return setError("Please enter a valid email address!");
   } else if (email.trim().length < 5 || email.trim().length > 50) {
    setSuccess("");
+   setLoading(false);
    return setError("Email address must be between 5 and 50 characters!");
   } else if (!name) {
    setSuccess("");
+   setLoading(false);
    return setError("Please enter your name!");
   } else if (!name.trim() || name.trim().length < 3 || name.trim().length > 20) {
    setSuccess("");
+   setLoading(false);
    return setError("Name must be between 3 and 20 characters!");
   } else if (!message) {
    setSuccess("");
+   setLoading(false);
    return setError("Please enter a message!");
   } else if (!message.trim() || message.trim().length < 10 || message.trim().length > 500) {
    setSuccess("");
+   setLoading(false);
    return setError("Message must be between 10 and 500 characters!");
   }
 
-  const data = { email, name, message };
-  await fetch("/api/contact", {
-   method: "POST",
-   headers: {
-    "Content-Type": "application/json",
-   },
-   body: JSON.stringify(data),
-  })
-   .then((res) => res.json())
-   .then((data) => {
-    if (data.error) {
-     setError(data.message);
+  const data = { email, name, subject: "Portfolio Contact Form", message };
+  
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    const result = await response.json();
+    
+    if (result.error) {
+      setError(result.error);
     } else {
-     setFormData({ email: "", name: "", message: "" });
-     setSuccess(data.message);
+      setFormData({ email: "", name: "", message: "" });
+      setSuccess(result.message);
     }
-   });
+  } catch (err) {
+    console.error("Contact form error:", err);
+    setError("Failed to send message. Please try again.");
+  } finally {
+    setLoading(false);
+  }
  };
 
  const handleChange = (e) => {
@@ -100,8 +117,8 @@ export function Contact(props) {
    {success ? <p className="self-start text-sm font-semibold tracking-wide text-green-500 ">{success}</p> : <></>}
    {error ? <p className="self-start text-sm font-semibold tracking-wide text-red-500 ">{error}</p> : <></>}
    <div className="w-full py-2">
-    <Button type="submit" className="ml-auto">
-     Send
+    <Button type="submit" className="ml-auto" disabled={loading}>
+     {loading ? "Sending..." : "Send"}
     </Button>
    </div>
   </form>

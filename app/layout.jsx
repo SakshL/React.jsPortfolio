@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import clsx from "clsx";
 import { Nav } from "components/elements/client/Nav";
 import { ProgressBar } from "components/elements/client/Progress";
@@ -61,6 +62,7 @@ export default function RootLayout({ children, modal }) {
       <main className="mt-24 flex min-h-screen flex-col px-6 antialiased">
        <ProgressBar />
        <Analytics />
+       <SpeedInsights />
        {children}
        {modal}
       </main>

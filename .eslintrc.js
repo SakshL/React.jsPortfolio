@@ -7,6 +7,7 @@ module.exports = {
   "import/no-anonymous-default-export": "off",
   "no-alert": "off",
   "complexity": "off",
+  "linebreak-style": "off",
  },
  env: {
   es6: true,

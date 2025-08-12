@@ -42,23 +42,23 @@ export function CodeCard({ userData, contributions }) {
        <span className="font-semibold">{ConvertNumber(contributions.total)} Contributions</span> since {contributions.dates.since} ({ConvertNumber(contributions.results[0].totalContributions)} in last year)
       </div>
      </span>
-     {meta.accounts.discord && (
+     {meta.accounts.instagram && (
       <div>
        <span className="font-semibold leading-6 text-[#ea4aaa]" aria-hidden="true">
         →
        </span>{" "}
        <span className="font-semibold text-[#66e777]" aria-hidden="true">
-        ~/{header.code.user}
+        ~/sakshyam.dev
        </span>{" "}
-       <span className="font-semibold italic text-slate-700 duration-200 motion-reduce:transition-none dark:text-slate-300">$</span> <span className="italic">contact --discord</span>
+       <span className="font-semibold italic text-slate-700 duration-200 motion-reduce:transition-none dark:text-slate-300">$</span> <span className="italic">contact --instagram</span>
        <div className="leading-6">
         + <span className="font-semibold">User:</span>{" "}
-        <Link href={`https://discord.com/users/${meta.accounts.discord.id}`} target="_blank">
-         {meta.accounts.discord.username}
+        <Link href={`https://instagram.com/${meta.accounts.instagram.username}`} target="_blank">
+         {meta.accounts.instagram.username}
         </Link>
         <br />+ <span className="font-semibold">Link:</span>{" "}
-        <Link href={meta.accounts.discord.invite} target="_blank">
-         {meta.accounts.discord.invite}
+        <Link href={`https://instagram.com/${meta.accounts.instagram.username}`} target="_blank">
+         https://instagram.com/{meta.accounts.instagram.username}
         </Link>
        </div>
       </div>
@@ -67,7 +67,7 @@ export function CodeCard({ userData, contributions }) {
       →
      </span>{" "}
      <span className="font-semibold text-[#66e777]" aria-hidden="true">
-      ~/{header.code.user}
+      ~/sakshyam.dev
      </span>{" "}
      <span className="italic">
       <span className="relative font-semibold text-slate-700 duration-200 after:absolute after:bottom-0 after:right-[-1.5em] after:top-0 after:my-auto after:animate-[cursor_750ms_infinite] after:text-[1em] after:not-italic after:content-['▌'] motion-reduce:transition-none dark:text-slate-300" aria-hidden="true">
