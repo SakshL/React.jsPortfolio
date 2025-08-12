@@ -23,6 +23,9 @@ export const meta = {
   instagram: {
    username: "fymsakshyam",
   },
+  linkedin: {
+   username: "sakshyam-baral-765b27363",
+  },
  },
 };
 
@@ -144,7 +147,7 @@ export const contact = {
    ),
   },
   {
-   href: "https://www.linkedin.com/in/sakshyam-baral/",
+   href: "https://www.linkedin.com/in/sakshyam-baral-765b27363/",
    title: "LinkedIn",
    icon: (
     <svg className="h-5 w-5 fill-[#0A66C2] duration-200 motion-reduce:transition-none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

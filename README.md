@@ -6,7 +6,7 @@
 
 <br/>
 
-[![Website](https://img.shields.io/badge/🌐_Website-sakshyambaral.com.np-4d67ff?style=for-the-badge&logoColor=white)](https://sakshyambaral.com.np)
+[!**🌐 [Website](https://sakshyambaral.com.np) • 🐦 [Twitter](https://twitter.com/sakshyamky) • 💼 [LinkedIn](https://www.linkedin.com/in/sakshyam-baral-765b27363/) • 📧 [Email](mailto:sakshyambaral97@gmail.com)**Website](https://img.shields.io/badge/🌐_Website-sakshyambaral.com.np-4d67ff?style=for-the-badge&logoColor=white)](https://sakshyambaral.com.np)
 [![GitHub](https://img.shields.io/badge/📱_GitHub-SakshL-333?style=for-the-badge&logo=github)](https://github.com/SakshL)
 [![Twitter](https://img.shields.io/badge/🐦_Twitter-@sakshyamky-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sakshyamky)
 
